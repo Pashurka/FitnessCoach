@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessCoach.Views.ProgressAnalyticsPage"
+             Title="FitnessCoach - Аналітика прогресу">
+
+    <Grid RowDefinitions="auto,*,auto" ColumnDefinitions="*">
+
+        <!-- Заголовок -->
+        <Frame Grid.Row="0" Grid.Column="0"
+               BackgroundColor="#FF9800"
+               Padding="15"
+               CornerRadius="0">
+            <HorizontalStackLayout Spacing="15">
+                <Label Text="📊"
+                       FontSize="28"
+                       VerticalOptions="Center"/>
+                <VerticalStackLayout Spacing="2">
+                    <Label Text="Марія Ковальчук - Аналітика прогресу"
+                           TextColor="White"
+                           FontSize="18"
+                           FontAttributes="Bold"/>
+                    <Label Text="Статистика та графіки"
+                           TextColor="#E0E0E0"
+                           FontSize="12"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <!-- Основний контент -->
+        <ScrollView Grid.Row="1" Grid.Column="0" Padding="20">
+            <VerticalStackLayout Spacing="25">
+
+                <!-- Загальна статистика -->
+                <Frame BackgroundColor="White"
+                       Padding="20"
+                       CornerRadius="15"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="📈 Загальна статистика"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+
+                        <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*" 
+                              ColumnSpacing="15" RowSpacing="15">
+
+                            <Frame Grid.Row="0" Grid.Column="0"
+                                   BackgroundColor="#E8F5E9"
+                                   Padding="15"
+                                   CornerRadius="10">
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="12.5"
+                                           FontSize="24"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="Тренувань"
+                                           FontSize="12"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="(+2.3)"
+                                           FontSize="10"
+                                           TextColor="#2E7D32"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Frame>
+
+                            <Frame Grid.Row="0" Grid.Column="1"
+                                   BackgroundColor="#E3F2FD"
+                                   Padding="15"
+                                   CornerRadius="10">
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="84%"
+                                           FontSize="24"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="Відвідування"
+                                           FontSize="12"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="(+7%)"
+                                           FontSize="10"
+                                           TextColor="#2196F3"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Frame>
+
+                            <Frame Grid.Row="0" Grid.Column="2"
+                                   BackgroundColor="#FFF3E0"
+                                   Padding="15"
+                                   CornerRadius="10">
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="2,850"
+                                           FontSize="24"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="Калорій/день"
+                                           FontSize="12"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="(+120)"
+                                           FontSize="10"
+                                           TextColor="#FF9800"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Frame>
+
+                            <Frame Grid.Row="1" Grid.Column="0"
+                                   BackgroundColor="#FCE4EC"
+                                   Padding="15"
+                                   CornerRadius="10">
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="-3.2 кг"
+                                           FontSize="24"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="Вага"
+                                           FontSize="12"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="за місяць"
+                                           FontSize="10"
+                                           TextColor="#9C27B0"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Frame>
+
+                            <Frame Grid.Row="1" Grid.Column="1"
+                                   BackgroundColor="#F3E5F5"
+                                   Padding="15"
+                                   CornerRadius="10">
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="+15%"
+                                           FontSize="24"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="Витривалість"
+                                           FontSize="12"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="прогрес"
+                                           FontSize="10"
+                                           TextColor="#7B1FA2"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Frame>
+
+                            <Frame Grid.Row="1" Grid.Column="2"
+                                   BackgroundColor="#E0F2F1"
+                                   Padding="15"
+                                   CornerRadius="10">
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="4.8"
+                                           FontSize="24"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="Рейтинг"
+                                           FontSize="12"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="середній"
+                                           FontSize="10"
+                                           TextColor="#00695C"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Графік прогресу ваги -->
+                <Frame BackgroundColor="White"
+                       Padding="20"
+                       CornerRadius="15"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <HorizontalStackLayout>
+                            <Label Text="⚖️ Динаміка ваги"
+                                   FontSize="16"
+                                   FontAttributes="Bold"/>
+                            <Label Text="(останні 30 днів)"
+                                   FontSize="14"
+                                   TextColor="#757575"
+                                   Margin="5,0,0,0"/>
+                        </HorizontalStackLayout>
+
+                        <!-- Імітація графіка -->
+                        <Frame Padding="15" CornerRadius="10" BackgroundColor="#FAFAFA">
+                            <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="auto,*,*,*,*,*,*"
+                                  RowSpacing="10" ColumnSpacing="15">
+
+                                <!-- Осі Y -->
+                                <Label Grid.Row="0" Grid.Column="0" Text="68 кг" FontSize="10"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="69 кг" FontSize="10"/>
+                                <Label Grid.Row="2" Grid.Column="0" Text="70 кг" FontSize="10"/>
+                                <Label Grid.Row="3" Grid.Column="0" Text="71 кг" FontSize="10"/>
+                                <Label Grid.Row="4" Grid.Column="0" Text="72 кг" FontSize="10"/>
+
+                                <!-- Точки графіка -->
+                                <Frame Grid.Row="0" Grid.Column="2" WidthRequest="8" HeightRequest="8" 
+                                       BackgroundColor="#2E7D32" CornerRadius="4" 
+                                       HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Frame Grid.Row="1" Grid.Column="3" WidthRequest="8" HeightRequest="8" 
+                                       BackgroundColor="#2E7D32" CornerRadius="4"
+                                       HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Frame Grid.Row="2" Grid.Column="4" WidthRequest="8" HeightRequest="8" 
+                                       BackgroundColor="#2E7D32" CornerRadius="4"
+                                       HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Frame Grid.Row="3" Grid.Column="5" WidthRequest="8" HeightRequest="8" 
+                                       BackgroundColor="#FF9800" CornerRadius="4"
+                                       HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Frame Grid.Row="4" Grid.Column="6" WidthRequest="8" HeightRequest="8" 
+                                       BackgroundColor="#F44336" CornerRadius="4"
+                                       HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                                <!-- Осі X -->
+                                <HorizontalStackLayout Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6"
+                                                      HorizontalOptions="Center" Spacing="25">
+                                    <Label Text="Т1" FontSize="10"/>
+                                    <Label Text="Т2" FontSize="10"/>
+                                    <Label Text="Т3" FontSize="10"/>
+                                    <Label Text="Т4" FontSize="10"/>
+                                    <Label Text="Сьогодні" FontSize="10" FontAttributes="Bold"/>
+                                </HorizontalStackLayout>
+
+                            </Grid>
+                        </Frame>
+
+                        <!-- Легенда графіка -->
+                        <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                            <HorizontalStackLayout Spacing="5">
+                                <Frame WidthRequest="10" HeightRequest="10" CornerRadius="5" BackgroundColor="#2E7D32"/>
+                                <Label Text="Норма" FontSize="11"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Frame WidthRequest="10" HeightRequest="10" CornerRadius="5" BackgroundColor="#FF9800"/>
+                                <Label Text="Увага" FontSize="11"/>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="5">
+                                <Frame WidthRequest="10" HeightRequest="10" CornerRadius="5" BackgroundColor="#F44336"/>
+                                <Label Text="Критично" FontSize="11"/>
+                            </HorizontalStackLayout>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Прогрес по типах тренувань -->
+                <Frame BackgroundColor="White"
+                       Padding="20"
+                       CornerRadius="15"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="🏋️‍♂️ Ефективність тренувань"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+
+                        <VerticalStackLayout Spacing="10">
+
+                            <!-- Силове тренування -->
+                            <Grid ColumnDefinitions="*,auto" ColumnSpacing="10">
+                                <VerticalStackLayout Spacing="3">
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="💪"
+                                               FontSize="14"/>
+                                        <Label Text="Силове тренування"
+                                               FontSize="14"/>
+                                    </HorizontalStackLayout>
+                                    <ProgressBar Progress="0.85"
+                                                 ProgressColor="#2E7D32"
+                                                 HeightRequest="6"/>
+                                    <Label Text="85% виконання"
+                                           FontSize="11"
+                                           TextColor="#757575"/>
+                                </VerticalStackLayout>
+                                <Label Text="🔥 12 вправ"
+                                       FontSize="12"
+                                       TextColor="#757575"
+                                       VerticalOptions="Center"/>
+                            </Grid>
+
+                            <!-- Кардіо -->
+                            <Grid ColumnDefinitions="*,auto" ColumnSpacing="10">
+                                <VerticalStackLayout Spacing="3">
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="🏃"
+                                               FontSize="14"/>
+                                        <Label Text="Кардіо"
+                                               FontSize="14"/>
+                                    </HorizontalStackLayout>
+                                    <ProgressBar Progress="0.72"
+                                                 ProgressColor="#2196F3"
+                                                 HeightRequest="6"/>
+                                    <Label Text="72% виконання"
+                                           FontSize="11"
+                                           TextColor="#757575"/>
+                                </VerticalStackLayout>
+                                <Label Text="❤️ 45 хв"
+                                       FontSize="12"
+                                       TextColor="#757575"
+                                       VerticalOptions="Center"/>
+                            </Grid>
+
+                            <!-- Гнучкість -->
+                            <Grid ColumnDefinitions="*,auto" ColumnSpacing="10">
+                                <VerticalStackLayout Spacing="3">
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="🧘"
+                                               FontSize="14"/>
+                                        <Label Text="Гнучкість"
+                                               FontSize="14"/>
+                                    </HorizontalStackLayout>
+                                    <ProgressBar Progress="0.91"
+                                                 ProgressColor="#9C27B0"
+                                                 HeightRequest="6"/>
+                                    <Label Text="91% виконання"
+                                           FontSize="11"
+                                           TextColor="#757575"/>
+                                </VerticalStackLayout>
+                                <Label Text="✨ 30 хв"
+                                       FontSize="12"
+                                       TextColor="#757575"
+                                       VerticalOptions="Center"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Досягнення -->
+                <Frame BackgroundColor="White"
+                       Padding="20"
+                       CornerRadius="15"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <HorizontalStackLayout>
+                            <Label Text="🏆 Досягнення"
+                                   FontSize="16"
+                                   FontAttributes="Bold"/>
+                            <Label Text="(3/5)"
+                                   FontSize="14"
+                                   TextColor="#757575"
+                                   Margin="5,0,0,0"/>
+                        </HorizontalStackLayout>
+
+                        <Grid ColumnDefinitions="*,*,*" ColumnSpacing="10">
+
+                            <Frame Padding="15" CornerRadius="10" BackgroundColor="#FFF8E1">
+                                <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                                    <Label Text="🥇"
+                                           FontSize="24"/>
+                                    <Label Text="Мета ваги"
+                                           FontSize="12"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="Досягнуто!"
+                                           FontSize="10"
+                                           TextColor="#2E7D32"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Frame>
+
+                            <Frame Padding="15" CornerRadius="10" BackgroundColor="#E3F2FD">
+                                <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                                    <Label Text="🥈"
+                                           FontSize="24"/>
+                                    <Label Text="10 тренувань"
+                                           FontSize="12"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="Виконано"
+                                           FontSize="10"
+                                           TextColor="#2196F3"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Frame>
+
+                            <Frame Padding="15" CornerRadius="10" BackgroundColor="#F3E5F5">
+                                <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+                                    <Label Text="🥉"
+                                           FontSize="24"/>
+                                    <Label Text="Кардіо 5км"
+                                           FontSize="12"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="Активно"
+                                           FontSize="10"
+                                           TextColor="#9C27B0"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </Grid>
+
+                        <Button Text="🎯 Встановити нові цілі"
+                                BackgroundColor="#FF9800"
+                                TextColor="White"
+                                CornerRadius="10"
+                                HeightRequest="45"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Персональні рекомендації -->
+                <Frame BackgroundColor="White"
+                       Padding="20"
+                       CornerRadius="15"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="💡 Персональні рекомендації"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+
+                        <VerticalStackLayout Spacing="10">
+
+                            <Frame Padding="15" CornerRadius="10" BackgroundColor="#E8F5E9">
+                                <HorizontalStackLayout Spacing="10">
+                                    <Label Text="✅"
+                                           FontSize="20"/>
+                                    <VerticalStackLayout Spacing="3">
+                                        <Label Text="Збільшити споживання води"
+                                               FontSize="13"
+                                               FontAttributes="Bold"/>
+                                        <Label Text="Рекомендовано: 2.5л/день"
+                                               FontSize="11"
+                                               TextColor="#757575"/>
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                            </Frame>
+
+                            <Frame Padding="15" CornerRadius="10" BackgroundColor="#FFF3E0">
+                                <HorizontalStackLayout Spacing="10">
+                                    <Label Text="⚠️"
+                                           FontSize="20"/>
+                                    <VerticalStackLayout Spacing="3">
+                                        <Label Text="Додати кардіо-сесії"
+                                               FontSize="13"
+                                               FontAttributes="Bold"/>
+                                        <Label Text="Пропущено 2 тренування"
+                                               FontSize="11"
+                                               TextColor="#757575"/>
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                            </Frame>
+
+                            <Frame Padding="15" CornerRadius="10" BackgroundColor="#E3F2FD">
+                                <HorizontalStackLayout Spacing="10">
+                                    <Label Text="💪"
+                                           FontSize="20"/>
+                                    <VerticalStackLayout Spacing="3">
+                                        <Label Text="Підвищити вагу на 2.5кг"
+                                               FontSize="13"
+                                               FontAttributes="Bold"/>
+                                        <Label Text="Наступне тренування"
+                                               FontSize="11"
+                                               TextColor="#757575"/>
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Нижня панель навігації -->
+        <Grid Grid.Row="2" Grid.Column="0"
+              BackgroundColor="White"
+              Padding="10"
+              RowSpacing="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <VerticalStackLayout Grid.Column="0" Spacing="2" HorizontalOptions="Center">
+                <Label Text="🏠"
+                       FontSize="20"
+                       HorizontalOptions="Center"/>
+                <Label Text="Головна"
+                       FontSize="10"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1" Spacing="2" HorizontalOptions="Center">
+                <Label Text="📊"
+                       FontSize="20"
+                       HorizontalOptions="Center"/>
+                <Label Text="Аналітика"
+                       FontSize="10"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
+            </VerticalStackLayout>
+
+            <!-- Центральна кнопка -->
+            <Button Grid.Column="2"
+                    Text="➕"
+                    FontSize="24"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    CornerRadius="30"
+                    BackgroundColor="#FF9800"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="0,-10,0,0"/>
+
+            <VerticalStackLayout Grid.Column="3" Spacing="2" HorizontalOptions="Center">
+                <Label Text="💎"
+                       FontSize="20"
+                       HorizontalOptions="Center"/>
+                <Label Text="Підписки"
+                       FontSize="10"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="4" Spacing="2" HorizontalOptions="Center">
+                <Label Text="👤"
+                       FontSize="20"
+                       HorizontalOptions="Center"/>
+                <Label Text="Профіль"
+                       FontSize="10"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

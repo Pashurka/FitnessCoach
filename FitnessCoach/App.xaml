@@ -1,0 +1,35 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessCoach.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+
+
+            <!-- Кольори -->
+            <Color x:Key="PrimaryColor">#2E7D32</Color>
+            <Color x:Key="SecondaryColor">#FF9800</Color>
+            <Color x:Key="BackgroundColor">#FAFAFA</Color>
+            <Color x:Key="TextPrimary">#212121</Color>
+            <Color x:Key="TextSecondary">#757575</Color>
+            <Color x:Key="ErrorColor">#D32F2F</Color>
+
+            <!-- Стилі -->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource TextSecondary}" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Margin" Value="0,5,0,0" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

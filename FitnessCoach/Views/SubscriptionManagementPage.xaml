@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessCoach.Views.SubscriptionManagementPage"
+             Title="Керування підписками">
+
+    <Grid RowDefinitions="auto,*,auto" ColumnDefinitions="*">
+
+        <!-- Заголовок -->
+        <Frame Grid.Row="0" Grid.Column="0"
+               BackgroundColor="#9C27B0"
+               Padding="15"
+               CornerRadius="0">
+            <HorizontalStackLayout Spacing="15">
+                <Label Text="💎"
+                       FontSize="28"
+                       VerticalOptions="Center"/>
+                <VerticalStackLayout Spacing="2">
+                    <Label Text="Мої підписки"
+                           TextColor="White"
+                           FontSize="18"
+                           FontAttributes="Bold"/>
+                    <Label Text="Керування та оплата"
+                           TextColor="#E0E0E0"
+                           FontSize="12"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <!-- Основний контент -->
+        <ScrollView Grid.Row="1" Grid.Column="0" Padding="20">
+            <VerticalStackLayout Spacing="25">
+
+                <!-- Поточна підписка -->
+                <Frame BackgroundColor="White"
+                       Padding="20"
+                       CornerRadius="15"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <HorizontalStackLayout>
+                            <Label Text="⭐ Поточна підписка"
+                                   FontSize="16"
+                                   FontAttributes="Bold"/>
+                            <!-- Виправлено: Frame замість Label з CornerRadius -->
+                            <Frame BackgroundColor="#FF9800"
+                                   Padding="5,2"
+                                   CornerRadius="3"
+                                   HasShadow="False"
+                                   Margin="5,0,0,0">
+                                <Label Text="PREMIUM"
+                                       TextColor="White"
+                                       FontSize="11"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                            </Frame>
+                        </HorizontalStackLayout>
+
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*" 
+                              ColumnSpacing="15" RowSpacing="12">
+
+                            <VerticalStackLayout Grid.Row="0" Grid.Column="0" Spacing="3">
+                                <Label Text="Тип підписки:"
+                                       FontSize="12"
+                                       TextColor="#757575"/>
+                                <Label Text="Преміум"
+                                       FontSize="14"
+                                       FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Row="0" Grid.Column="1" Spacing="3">
+                                <Label Text="Вартість:"
+                                       FontSize="12"
+                                       TextColor="#757575"/>
+                                <Label Text="₴ 850 / місяць"
+                                       FontSize="14"
+                                       FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Row="1" Grid.Column="0" Spacing="3">
+                                <Label Text="Початок дії:"
+                                       FontSize="12"
+                                       TextColor="#757575"/>
+                                <Label Text="15.01.2025"
+                                       FontSize="14"
+                                       FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Row="1" Grid.Column="1" Spacing="3">
+                                <Label Text="Закінчення:"
+                                       FontSize="12"
+                                       TextColor="#757575"/>
+                                <Label Text="15.01.2026"
+                                       FontSize="14"
+                                       FontAttributes="Bold"/>
+                            </VerticalStackLayout>
+
+                            <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                   BackgroundColor="#F3E5F5"
+                                   Padding="10"
+                                   CornerRadius="8">
+                                <HorizontalStackLayout>
+                                    <Label Text="⏰ Залишилось:"
+                                           FontSize="12"/>
+                                    <Label Text=" 12 днів "
+                                           FontSize="12"
+                                           FontAttributes="Bold"
+                                           TextColor="#9C27B0"/>
+                                    <Label Text=" (до 15.01.2024)"
+                                           FontSize="12"
+                                           TextColor="#757575"/>
+                                    <ProgressBar Progress="0.6"
+                                                 ProgressColor="#9C27B0"
+                                                 HeightRequest="6"
+                                                 VerticalOptions="Center"
+                                                 Margin="10,0,0,0"/>
+                                </HorizontalStackLayout>
+                            </Frame>
+                        </Grid>
+
+                        <!-- Переваги підписки -->
+                        <Frame Padding="15" CornerRadius="10" BackgroundColor="#F3E5F5">
+                            <VerticalStackLayout Spacing="8">
+                                <Label Text="✅ Доступні функції:"
+                                       FontSize="13"
+                                       FontAttributes="Bold"/>
+                                <Grid ColumnDefinitions="*,*" RowDefinitions="*,*" 
+                                      ColumnSpacing="10" RowSpacing="8">
+                                    <HorizontalStackLayout Grid.Row="0" Grid.Column="0" Spacing="5">
+                                        <Label Text="●"
+                                               FontSize="10"
+                                               TextColor="#9C27B0"/>
+                                        <Label Text="Особистий тренер"
+                                               FontSize="12"/>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Grid.Row="0" Grid.Column="1" Spacing="5">
+                                        <Label Text="●"
+                                               FontSize="10"
+                                               TextColor="#9C27B0"/>
+                                        <Label Text="Всі тренування"
+                                               FontSize="12"/>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Spacing="5">
+                                        <Label Text="●"
+                                               FontSize="10"
+                                               TextColor="#9C27B0"/>
+                                        <Label Text="Аналітика прогресу"
+                                               FontSize="12"/>
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Grid.Row="1" Grid.Column="1" Spacing="5">
+                                        <Label Text="●"
+                                               FontSize="10"
+                                               TextColor="#9C27B0"/>
+                                        <Label Text="Дієтичні плани"
+                                               FontSize="12"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Frame>
+
+                        <!-- Кнопки управління -->
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                            <Button Grid.Column="0"
+            Text="♻️ Продовжити"
+            BackgroundColor="#9C27B0"
+            TextColor="White"
+            CornerRadius="10"
+            HeightRequest="45" />
+
+                            <Button Grid.Column="1"
+            Text="⚙️ Змінити"
+            CornerRadius="10"
+            HeightRequest="45">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="BackgroundColor" Value="White" />
+                                        <Setter Property="TextColor" Value="#9C27B0" />
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Grid>
+
+
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Доступні підписки -->
+                <Frame BackgroundColor="White"
+                       Padding="20"
+                       CornerRadius="15"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="📋 Доступні тарифи"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+
+                        <Grid ColumnDefinitions="*,*,*" ColumnSpacing="10">
+
+                            <!-- Базовий тариф -->
+                            <Frame Padding="15" CornerRadius="10" BackgroundColor="#F5F5F5">
+                                <VerticalStackLayout Spacing="10">
+                                    <!-- Виправлено: Frame замість Label з CornerRadius -->
+                                    <Frame BackgroundColor="#757575"
+                                           Padding="8,3"
+                                           CornerRadius="3"
+                                           HorizontalOptions="Center">
+                                        <Label Text="BASIC"
+                                               TextColor="White"
+                                               FontSize="11"
+                                               FontAttributes="Bold"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"/>
+                                    </Frame>
+
+                                    <Label Text="₴ 350"
+                                           FontSize="20"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="/ місяць"
+                                           FontSize="12"
+                                           TextColor="#757575"
+                                           HorizontalOptions="Center"/>
+
+                                    <VerticalStackLayout Spacing="5">
+                                        <HorizontalStackLayout Spacing="5">
+                                            <Label Text="✓"
+                                                   FontSize="12"
+                                                   TextColor="#4CAF50"/>
+                                            <Label Text="Группові тренування"
+                                                   FontSize="11"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="5">
+                                            <Label Text="✓"
+                                                   FontSize="12"
+                                                   TextColor="#4CAF50"/>
+                                            <Label Text="Базова статистика"
+                                                   FontSize="11"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="5">
+                                            <Label Text="✗"
+                                                   FontSize="12"
+                                                   TextColor="#F44336"/>
+                                            <Label Text="Особистий тренер"
+                                                   FontSize="11"
+                                                   TextColor="#757575"/>
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+
+                                    <Button Text="Обрати"
+                                            BackgroundColor="#757575"
+                                            TextColor="White"
+                                            CornerRadius="5"
+                                            HeightRequest="35"
+                                            FontSize="12"/>
+                                </VerticalStackLayout>
+                            </Frame>
+
+                            <!-- Преміум тариф (активний) -->
+                            <!-- ЗМІНА: Видалено Stroke та StrokeThickness з Frame -->
+                            <Frame Padding="15" CornerRadius="10" 
+                                   BackgroundColor="#F3E5F5"
+                                   HasShadow="True">
+                                <VerticalStackLayout Spacing="10">
+                                    <!-- Виправлено: Frame замість Label з CornerRadius -->
+                                    <Frame BackgroundColor="#9C27B0"
+                                           Padding="8,3"
+                                           CornerRadius="3"
+                                           HorizontalOptions="Center">
+                                        <Label Text="PREMIUM"
+                                               TextColor="White"
+                                               FontSize="11"
+                                               FontAttributes="Bold"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"/>
+                                    </Frame>
+
+                                    <Label Text="₴ 850"
+                                           FontSize="20"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="/ місяць"
+                                           FontSize="12"
+                                           TextColor="#757575"
+                                           HorizontalOptions="Center"/>
+
+                                    <VerticalStackLayout Spacing="5">
+                                        <HorizontalStackLayout Spacing="5">
+                                            <Label Text="✓"
+                                                   FontSize="12"
+                                                   TextColor="#4CAF50"/>
+                                            <Label Text="Особистий тренер"
+                                                   FontSize="11"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="5">
+                                            <Label Text="✓"
+                                                   FontSize="12"
+                                                   TextColor="#4CAF50"/>
+                                            <Label Text="Повна статистика"
+                                                   FontSize="11"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="5">
+                                            <Label Text="✓"
+                                                   FontSize="12"
+                                                   TextColor="#4CAF50"/>
+                                            <Label Text="Дієтичні плани"
+                                                   FontSize="11"/>
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+
+                                    <Button Text="Активна"
+                                            BackgroundColor="#9C27B0"
+                                            TextColor="White"
+                                            CornerRadius="5"
+                                            HeightRequest="35"
+                                            FontSize="12"/>
+                                </VerticalStackLayout>
+                            </Frame>
+
+                            <!-- PRO тариф -->
+                            <Frame Padding="15" CornerRadius="10" BackgroundColor="#F5F5F5">
+                                <VerticalStackLayout Spacing="10">
+                                    <!-- Виправлено: Frame замість Label з CornerRadius -->
+                                    <Frame BackgroundColor="#FF9800"
+                                           Padding="8,3"
+                                           CornerRadius="3"
+                                           HorizontalOptions="Center">
+                                        <Label Text="PRO"
+                                               TextColor="White"
+                                               FontSize="11"
+                                               FontAttributes="Bold"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"/>
+                                    </Frame>
+
+                                    <Label Text="₴ 1,200"
+                                           FontSize="20"
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="/ місяць"
+                                           FontSize="12"
+                                           TextColor="#757575"
+                                           HorizontalOptions="Center"/>
+
+                                    <VerticalStackLayout Spacing="5">
+                                        <HorizontalStackLayout Spacing="5">
+                                            <Label Text="✓"
+                                                   FontSize="12"
+                                                   TextColor="#4CAF50"/>
+                                            <Label Text="Все з Premium+"
+                                                   FontSize="11"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="5">
+                                            <Label Text="✓"
+                                                   FontSize="12"
+                                                   TextColor="#4CAF50"/>
+                                            <Label Text="Експрес аналіз"
+                                                   FontSize="11"/>
+                                        </HorizontalStackLayout>
+                                        <HorizontalStackLayout Spacing="5">
+                                            <Label Text="✓"
+                                                   FontSize="12"
+                                                   TextColor="#4CAF50"/>
+                                            <Label Text="24/7 підтримка"
+                                                   FontSize="11"/>
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+
+                                    <Button Text="Обрати"
+                                            BackgroundColor="#FF9800"
+                                            TextColor="White"
+                                            CornerRadius="5"
+                                            HeightRequest="35"
+                                            FontSize="12"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Історія платежів -->
+                <Frame BackgroundColor="White"
+                       Padding="20"
+                       CornerRadius="15"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <HorizontalStackLayout>
+                            <Label Text="💰 Історія платежів"
+                                   FontSize="16"
+                               FontAttributes="Bold"/>
+                            <Label Text="(останні 6 місяців)"
+                                   FontSize="14"
+                                   TextColor="#757575"
+                                   Margin="5,0,0,0"/>
+                        </HorizontalStackLayout>
+
+                        <!-- Статистика витрат -->
+                        <Frame Padding="15" CornerRadius="10" BackgroundColor="#E8F5E9">
+                            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="15">
+                                <VerticalStackLayout Grid.Column="0" Spacing="3">
+                                    <Label Text="Всього витрат:"
+                                           FontSize="12"
+                                           TextColor="#757575"/>
+                                    <Label Text="₴ 5,100"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#2E7D32"/>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout Grid.Column="1" Spacing="3">
+                                    <Label Text="Транзакцій:"
+                                           FontSize="12"
+                                           TextColor="#757575"/>
+                                    <Label Text="6"
+                                           FontSize="16"
+                                           FontAttributes="Bold"/>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout Grid.Column="2" Spacing="3">
+                                    <Label Text="Середній чек:"
+                                           FontSize="12"
+                                           TextColor="#757575"/>
+                                    <Label Text="₴ 850"
+                                           FontSize="16"
+                                           FontAttributes="Bold"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+
+                        <!-- Список платежів -->
+                        <VerticalStackLayout Spacing="10">
+
+                            <!-- Платіж 1 -->
+                            <Frame Padding="15" CornerRadius="10" BackgroundColor="#F5F5F5">
+                                <Grid ColumnDefinitions="*,auto" RowDefinitions="*,*">
+                                    <VerticalStackLayout Grid.Row="0" Grid.Column="0" Spacing="3">
+                                        <Label Text="Преміум підписка"
+                                               FontSize="14"
+                                               FontAttributes="Bold"/>
+                                        <Label Text="15.01.2024 10:30"
+                                               FontSize="12"
+                                               TextColor="#757575"/>
+                                    </VerticalStackLayout>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="₴ 850"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#2E7D32"/>
+                                    <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Spacing="10">
+                                        <Label Text="💳 Карта **** 4578"
+                                               FontSize="11"
+                                               TextColor="#757575"/>
+                                        <!-- Виправлено: Frame замість Label з CornerRadius -->
+                                        <Frame BackgroundColor="#E8F5E9"
+                                               Padding="5,2"
+                                               CornerRadius="3">
+                                            <Label Text="✅ Успішно"
+                                                   TextColor="#2E7D32"
+                                                   FontSize="10"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"/>
+                                        </Frame>
+                                    </HorizontalStackLayout>
+                                    <!-- ЗМІНА: Замість Button з обводкою -->
+                                    <Frame Grid.Row="1" Grid.Column="1"
+                                           BackgroundColor="Transparent"
+                                           Padding="0"
+                                           CornerRadius="5"
+                                           HeightRequest="30"
+                                           WidthRequest="90">
+                                        <Button Text="Квитанція"
+                                                BackgroundColor="Transparent"
+                                                TextColor="#2196F3"
+                                                CornerRadius="5"
+                                                HeightRequest="30"
+                                                FontSize="11"
+                                                WidthRequest="90"/>
+                                    </Frame>
+                                </Grid>
+                            </Frame>
+
+                            <!-- Платіж 2 -->
+                            <Frame Padding="15" CornerRadius="10" BackgroundColor="#F5F5F5">
+                                <Grid ColumnDefinitions="*,auto" RowDefinitions="*,*">
+                                    <VerticalStackLayout Grid.Row="0" Grid.Column="0" Spacing="3">
+                                        <Label Text="Преміум підписка"
+                                               FontSize="14"
+                                               FontAttributes="Bold"/>
+                                        <Label Text="15.12.2023 09:15"
+                                               FontSize="12"
+                                               TextColor="#757575"/>
+                                    </VerticalStackLayout>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="₴ 850"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#2E7D32"/>
+                                    <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Spacing="10">
+                                        <Label Text="💳 Карта **** 4578"
+                                               FontSize="11"
+                                               TextColor="#757575"/>
+                                        <!-- Виправлено: Frame замість Label з CornerRadius -->
+                                        <Frame BackgroundColor="#E8F5E9"
+                                               Padding="5,2"
+                                               CornerRadius="3">
+                                            <Label Text="✅ Успішно"
+                                                   TextColor="#2E7D32"
+                                                   FontSize="10"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"/>
+                                        </Frame>
+                                    </HorizontalStackLayout>
+                                    <Frame Grid.Row="1" Grid.Column="1"
+                                           BackgroundColor="Transparent"
+                                           Padding="0"
+                                           CornerRadius="5"
+                                           HeightRequest="30"
+                                           WidthRequest="90">
+                                        <Button Text="Квитанція"
+                                                BackgroundColor="Transparent"
+                                                TextColor="#2196F3"
+                                                CornerRadius="5"
+                                                HeightRequest="30"
+                                                FontSize="11"
+                                                WidthRequest="90"/>
+                                    </Frame>
+                                </Grid>
+                            </Frame>
+
+                            <!-- Платіж 3 -->
+                            <Frame Padding="15" CornerRadius="10" BackgroundColor="#F5F5F5">
+                                <Grid ColumnDefinitions="*,auto" RowDefinitions="*,*">
+                                    <VerticalStackLayout Grid.Row="0" Grid.Column="0" Spacing="3">
+                                        <Label Text="PRO підписка"
+                                               FontSize="14"
+                                               FontAttributes="Bold"/>
+                                        <Label Text="15.11.2023 14:20"
+                                               FontSize="12"
+                                               TextColor="#757575"/>
+                                    </VerticalStackLayout>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="₴ 1,200"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#FF9800"/>
+                                    <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Spacing="10">
+                                        <Label Text="💳 Карта **** 4578"
+                                               FontSize="11"
+                                               TextColor="#757575"/>
+                                        <!-- Виправлено: Frame замість Label з CornerRadius -->
+                                        <Frame BackgroundColor="#E8F5E9"
+                                               Padding="5,2"
+                                               CornerRadius="3">
+                                            <Label Text="✅ Успішно"
+                                                   TextColor="#2E7D32"
+                                                   FontSize="10"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"/>
+                                        </Frame>
+                                    </HorizontalStackLayout>
+                                    <Frame Grid.Row="1" Grid.Column="1"
+                                           BackgroundColor="Transparent"
+                                           Padding="0"
+                                           CornerRadius="5"
+                                           HeightRequest="30"
+                                           WidthRequest="90">
+                                        <Button Text="Квитанція"
+                                                BackgroundColor="Transparent"
+                                                TextColor="#2196F3"
+                                                CornerRadius="5"
+                                                HeightRequest="30"
+                                                FontSize="11"
+                                                WidthRequest="90"/>
+                                    </Frame>
+                                </Grid>
+                            </Frame>
+
+                            <!-- Платіж 4 -->
+                            <Frame Padding="15" CornerRadius="10" BackgroundColor="#F5F5F5">
+                                <Grid ColumnDefinitions="*,auto" RowDefinitions="*,*">
+                                    <VerticalStackLayout Grid.Row="0" Grid.Column="0" Spacing="3">
+                                        <Label Text="Преміум підписка"
+                                               FontSize="14"
+                                               FontAttributes="Bold"/>
+                                        <Label Text="15.10.2023 11:45"
+                                               FontSize="12"
+                                               TextColor="#757575"/>
+                                    </VerticalStackLayout>
+                                    <Label Grid.Row="0" Grid.Column="1"
+                                           Text="₴ 850"
+                                           FontSize="16"
+                                           FontAttributes="Bold"
+                                           TextColor="#2E7D32"/>
+                                    <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Spacing="10">
+                                        <Label Text="💳 Карта **** 4578"
+                                               FontSize="11"
+                                               TextColor="#757575"/>
+                                        <!-- Виправлено: Frame замість Label з CornerRadius -->
+                                        <Frame BackgroundColor="#FFF3E0"
+                                               Padding="5,2"
+                                               CornerRadius="3">
+                                            <Label Text="⚠️ Скасовано"
+                                                   TextColor="#FF9800"
+                                                   FontSize="10"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"/>
+                                        </Frame>
+                                    </HorizontalStackLayout>
+                                    <Frame Grid.Row="1" Grid.Column="1"
+                                           BackgroundColor="Transparent"
+                                           Padding="0"
+                                           CornerRadius="5"
+                                           HeightRequest="30"
+                                           WidthRequest="90">
+                                        <Button Text="Деталі"
+                                                BackgroundColor="Transparent"
+                                                TextColor="#2196F3"
+                                                CornerRadius="5"
+                                                HeightRequest="30"
+                                                FontSize="11"
+                                                WidthRequest="90"/>
+                                    </Frame>
+                                </Grid>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- ЗМІНА: Замінити Button з обводкою на Frame з Button всередині -->
+                        <Frame BackgroundColor="Transparent"
+                               Padding="0"
+                               CornerRadius="10"
+                               HeightRequest="45">
+                            <Button Text="📄 Показати всю історію"
+                                    BackgroundColor="Transparent"
+                                    TextColor="#2196F3"
+                                    CornerRadius="10"
+                                    HeightRequest="45"/>
+                        </Frame>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Автопродовження -->
+                <Frame BackgroundColor="White"
+                       Padding="20"
+                       CornerRadius="15"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="⚙️ Налаштування автопродовження"
+                               FontSize="16"
+                               FontAttributes="Bold"/>
+
+                        <Grid ColumnDefinitions="*,auto" ColumnSpacing="15">
+                            <VerticalStackLayout Spacing="3">
+                                <Label Text="Автоматичне продовження"
+                                       FontSize="14"/>
+                                <Label Text="Підписка автоматично продовжиться за 3 дні до закінчення"
+                                       FontSize="12"
+                                       TextColor="#757575"/>
+                            </VerticalStackLayout>
+                            <Switch IsToggled="True"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Frame Padding="15" CornerRadius="10" BackgroundColor="#FFF3E0">
+                            <HorizontalStackLayout Spacing="10">
+                                <Label Text="ℹ️"
+                                       FontSize="20"/>
+                                <VerticalStackLayout Spacing="3">
+                                    <Label Text="Наступне списання: ₴ 850"
+                                           FontSize="13"
+                                           FontAttributes="Bold"/>
+                                    <Label Text="12.01.2026 (за 3 дні до закінчення)"
+                                           FontSize="12"
+                                           TextColor="#757575"/>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Нижня панель навігації -->
+        <Grid Grid.Row="2" Grid.Column="0"
+              BackgroundColor="White"
+              Padding="10"
+              RowSpacing="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <VerticalStackLayout Grid.Column="0" Spacing="2" HorizontalOptions="Center">
+                <Label Text="🏠"
+                       FontSize="20"
+                       HorizontalOptions="Center"/>
+                <Label Text="Головна"
+                       FontSize="10"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1" Spacing="2" HorizontalOptions="Center">
+                <Label Text="💎"
+                       FontSize="20"
+                       HorizontalOptions="Center"/>
+                <Label Text="Підписки"
+                       FontSize="10"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"/>
+            </VerticalStackLayout>
+
+            <!-- Центральна кнопка -->
+            <Button Grid.Column="2"
+                    Text="➕"
+                    FontSize="24"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    CornerRadius="30"
+                    BackgroundColor="#9C27B0"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="0,-10,0,0"/>
+
+            <VerticalStackLayout Grid.Column="3" Spacing="2" HorizontalOptions="Center">
+                <Label Text="📊"
+                       FontSize="20"
+                       HorizontalOptions="Center"/>
+                <Label Text="Статистика"
+                       FontSize="10"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="4" Spacing="2" HorizontalOptions="Center">
+                <Label Text="👤"
+                       FontSize="20"
+                       HorizontalOptions="Center"/>
+                <Label Text="Профіль"
+                       FontSize="10"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>
